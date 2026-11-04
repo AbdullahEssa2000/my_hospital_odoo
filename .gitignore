@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Odoo
+*.log
+*.pid
+*.pot
+*.mo
+
+# IDE
+.idea/
+.vscode/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Database Backups
+*.sql
+*.dump
+*.backup
+
+# Temporary Files
+*.tmp
+*.swp
+*~
+
+# Operating System
+.DS_Store
+Thumbs.db
