@@ -114,3 +114,26 @@ LGPL-3
 Abdullah Essa
 
 Odoo Developer | Python Developer
+
+## 📸 Screenshots
+
+### Patient Management
+![Patients](screenshots/patients.png)
+
+### Doctor Management
+![Doctors](screenshots/doctors.png)
+
+### Additional Screenshots
+![Screenshot 1](screenshots/Screenshot%20From%202026-10-25%2014-45-36.png)
+
+![Screenshot 2](screenshots/Screenshot%20From%202026-10-25%2014-49-48.png)
+
+![Screenshot 3](screenshots/Screenshot%20From%202026-10-25%2014-50-05.png)
+
+![Screenshot 4](screenshots/Screenshot%20From%202026-10-25%2014-50-31.png)
+
+![Screenshot 5](screenshots/Screenshot%20From%202026-10-25%2014-51-01.png)
+
+![Screenshot 6](screenshots/Screenshot%20From%202026-10-25%2014-51-08.png)
+
+![Screenshot 7](screenshots/Screenshot%20From%202026-10-25%2015-03-51.png)
