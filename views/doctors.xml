@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_hospital_doctors" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_doctor', '=', True)]</field>
+    </record>
+
+    <menuitem
+        id="hospital_doctors"
+        name="Doctors"
+        parent="hospital_resources"
+        sequence="0"
+        action="action_hospital_doctors"
+    />
+
+</odoo>

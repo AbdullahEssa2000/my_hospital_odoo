@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="add_appointment_wizard_form" model="ir.ui.view">
+        <field name="name">add.appointment.wizard</field>
+        <field name="model">add.appointment</field>
+        <field name="arch" type="xml">
+            <form string="add appointment">
+                <group>
+                    <group>
+                        <field name="patient_id"
+                            options="{'no_create_edit': True, 'no_create': True}"/>
+                        <field name="doctor_id"
+                            options="{'no_create_edit': True, 'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="app_date" />
+                        <field name="notes" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm_appointment" string="confirm" type="object" class="btn-primary" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="my_hospital.add_appointment_wizard" model="ir.actions.act_window">
+        <field name="name">add appointment</field>
+        <field name="res_model">add.appointment</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="add_appointment_wizard_form"/>
+        <field name="target">new</field>
+
+    </record>
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="appointment_list" model="ir.ui.view">
+        <field name="name">the.appointments.list</field>
+        <field name="model">the.appointments</field>
+        <field name="arch" type="xml">
+            <list string="Appointments">
+                <field name="name" />
+                <field name="patient_id" />
+                <field name="patient_age" />
+                <field name="doctor_id"/>
+                <field name="notes" />
+                <field name="app_date" />
+                <field name="state" />
+
+            </list>
+        </field>
+    </record>
+
+    <record id="appointment_form" model="ir.ui.view">
+        <field name="name">the.appointments.form</field>
+        <field name="model">the.appointments</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"
+                    invisible="state != 'draft' "/>
+                    <button name="action_done" type="object" string="Done" class="oe_highlight"
+                    invisible="state != 'confirm' "/>
+                    <button name="action_cancel" type="object" string="Cancel" class="oe_highlight"
+                    invisible="state == 'done' or state == 'cancel' "/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="app_date"/>
+                        </group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="patient_age"/>
+                        </group>
+                        <group>
+                            <field name="doctor_id"/>
+                            <field name="notes"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Prescription">
+                            <group>
+                                <field name="prescription_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="notes"/>
+                                    </list>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Doctor Notes">
+                            <group>
+                                <field name="doctor_notes"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <record id="my_hospital.action_appointments" model="ir.actions.act_window">
+        <field name="name">appointments</field>
+        <field name="res_model">the.appointments</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                 Make the first appointment......
+            </p>
+        </field>
+    </record>
+</odoo>

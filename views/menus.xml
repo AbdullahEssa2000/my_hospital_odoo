@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem
+        id="hospital_root"
+        name="Hospital"
+        sequence="0"
+    />
+
+    <menuitem
+        id="hospital_resources"
+        name="Resources"
+        parent="hospital_root"
+        sequence="0"
+    />
+
+    <menuitem
+        id="hospital_patient"
+        name="Patient"
+        parent="hospital_resources"
+        sequence="1"
+        action="my_hospital.action_patients"
+    />
+
+    <menuitem
+        id="hospital_transactions"
+        name="Transactions"
+        parent="hospital_root"
+        sequence="1"
+    />
+
+    <menuitem
+        id="hospital_appointments"
+        name="Appointments"
+        parent="hospital_transactions"
+        sequence="0"
+        action="my_hospital.action_appointments"
+    />
+
+    <menuitem
+        id="hospital_prescriptions"
+        name="Prescriptions"
+        parent="hospital_transactions"
+        sequence="1"
+        action="my_hospital.action_prescriptions"
+    />
+
+    <menuitem
+        id="add_appointment_menu"
+        name="Add Appointment"
+        parent="hospital_transactions"
+        sequence="2"
+        action="my_hospital.add_appointment_wizard"
+    />
+
+    <menuitem
+        id="hospital_products"
+        name="Products"
+        parent="hospital_resources"
+        sequence="2"
+        action="product.product_template_action"
+    />
+
+    <menuitem
+        id="hospital_sales"
+        name="Sales"
+        parent="hospital_root"
+        sequence="2"
+        action="sale.action_orders"
+        groups="sales_team.group_sale_salesman"
+    />
+
+    <menuitem
+        id="hospital_inventory"
+        name="Inventory"
+        parent="hospital_root"
+        sequence="3"
+        action="stock.action_picking_tree_all"
+        groups="stock.group_stock_user"
+    />
+
+    <menuitem
+        id="hospital_purchase"
+        name="Purchase"
+        parent="hospital_root"
+        sequence="4"
+        action="purchase.purchase_rfq"
+        groups="purchase.group_purchase_user,purchase.group_purchase_manager"
+    />
+
+    <menuitem
+        id="hospital_accounting"
+        name="Accounting"
+        parent="hospital_root"
+        sequence="5"
+        action="account.action_move_in_invoice_type"
+        groups="account.group_account_user"
+    />
+
+    <menuitem
+        id="hospital_pos"
+        name="Point of Sale"
+        parent="hospital_root"
+        sequence="6"
+        groups="point_of_sale.group_pos_user"
+        action="point_of_sale.action_pos_config_kanban"
+    />
+
+    <!-- Payroll -->
+    <menuitem
+        id="hospital_payroll"
+        name="Payroll"
+        parent="hospital_root"
+        sequence="7"
+    />
+
+    <menuitem
+        id="hospital_payroll_payslips"
+        name="Payslips"
+        parent="hospital_payroll"
+        sequence="1"
+        action="my_payroll.action_my_payroll_payslips"
+    />
+
+    <menuitem
+        id="hospital_payroll_payments"
+        name="Payments"
+        parent="hospital_payroll"
+        sequence="2"
+        action="my_payroll.action_my_payroll_payments"
+    />
+
+    <menuitem
+        id="hospital_payroll_salary_rules"
+        name="Salary Rules"
+        parent="hospital_payroll"
+        sequence="3"
+        action="my_payroll.action_my_payroll_salary_rules"
+    />
+
+        <!-- CRM -->
+    <menuitem
+        id="menu_hospital_crm"
+        name="CRM"
+        parent="hospital_root"
+        sequence="8"
+    />
+
+    <menuitem
+        id="menu_hospital_crm_leads"
+        name="Leads"
+        parent="menu_hospital_crm"
+        action="crm.crm_lead_action_pipeline"
+        sequence="1"
+    />
+
+    <menuitem
+        id="menu_hospital_crm_opportunities"
+        name="Opportunities"
+        parent="menu_hospital_crm"
+        action="crm.crm_lead_action_pipeline"
+        sequence="2"
+    />
+
+</odoo>

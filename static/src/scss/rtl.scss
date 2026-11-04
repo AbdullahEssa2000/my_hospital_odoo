@@ -1,0 +1,45 @@
+/* =========================
+   List Views
+   ========================= */
+
+.o_web_client.o_rtl .o_list_table {
+    direction: rtl !important;
+}
+
+.o_web_client.o_rtl .o_list_table th,
+.o_web_client.o_rtl .o_list_table td {
+    text-align: right !important;
+}
+
+
+/* =========================
+   Top Navbar
+   ========================= */
+
+.o_web_client.o_rtl .o_main_navbar {
+    direction: rtl !important;
+}
+
+
+/* Navbar sections */
+.o_web_client.o_rtl .o_main_navbar .o_menu_sections {
+    direction: rtl !important;
+}
+
+
+/* Breadcrumbs */
+.o_web_client.o_rtl .o_main_navbar .o_navbar_breadcrumbs {
+    direction: rtl !important;
+}
+
+
+/* User / Notifications area */
+.o_web_client.o_rtl .o_main_navbar .o_menu_systray {
+    direction: rtl !important;
+}
+
+
+/* Navbar flex children */
+.o_web_client.o_rtl .o_main_navbar > * {
+    direction: rtl;
+}

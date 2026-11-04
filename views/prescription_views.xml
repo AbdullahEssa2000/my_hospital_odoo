@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Prescription Form -->
+    <record id="view_prescription_form" model="ir.ui.view">
+        <field name="name">the.prescription.form</field>
+        <field name="model">the.prescription</field>
+        <field name="arch" type="xml">
+
+            <form>
+                <sheet>
+
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="appointment_id"/>
+                            <field name="appointment_date" readonly="1"/>
+                        </group>
+
+                        <group>
+                            <field name="patient_id" readonly="1"/>
+                            <field name="doctor_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="notes"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Medicines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"
+                                           string="Medicine"
+                                           domain="[('product_tmpl_id.is_medicine', '=', True)]"
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                    <field name="quantity"/>
+                                    <field name="dosage"/>
+                                    <field name="instructions"/>
+                                    <field name="notes"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <!-- Prescription List -->
+    <record id="view_prescription_list" model="ir.ui.view">
+        <field name="name">the.prescription.list</field>
+        <field name="model">the.prescription</field>
+        <field name="arch" type="xml">
+
+            <list>
+                <field name="name"/>
+                <field name="appointment_id"/>
+                <field name="appointment_date"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+            </list>
+
+        </field>
+    </record>
+
+    <!-- Prescription Action -->
+    <record id="action_prescriptions" model="ir.actions.act_window">
+        <field name="name">Prescriptions</field>
+        <field name="res_model">the.prescription</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

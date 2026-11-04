@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_form_medicine" model="ir.ui.view">
+        <field name="name">product.template.form.medicine</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="is_medicine"/>
+                <field name="effective_material"
+                       invisible="not is_medicine"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
