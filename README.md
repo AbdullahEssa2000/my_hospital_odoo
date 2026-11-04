@@ -111,6 +111,6 @@ LGPL-3
 
 ## Author
 
-Abdullah Eissa
+Abdullah Essa
 
 Odoo Developer | Python Developer
